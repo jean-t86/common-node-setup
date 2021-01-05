@@ -6,4 +6,4 @@ As time goes by and I gain experience with developing REST APIs with Express.js 
 ## Running the script
 After cloning the repository, you will want to grant execution authority to the script. Run the following in your terminal: `chmod +x common-node.sh`.
 
-You can then run the script in your new project's directory using `./common-node.js`.
+You can then run the script in your new project's directory using `./common-node.sh`.
