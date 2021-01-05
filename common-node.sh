@@ -4,21 +4,13 @@ echo 'This script will run commands that are often needed when starting'
 echo 'a new Node project'
 echo ''
 
-# Checks if package.json exists in the working directory
-fileExists=false
-for filename in *
-do
-  if [ $filename == 'package.json' ]
-  then
-    fileExists=true
-    break;
-  fi
-done
-
-# No package.json? - run npm init
-# package.json? - run node install
-if [ $fileExists -eq false ]
+# # Checks if package.json exists in the working directory
+if [ -f './package.json' ]
 then
+  # package.json? - run npm install
+  npm install
+else
+  # No package.json? - run npm init
   npm init
 fi
 
@@ -30,6 +22,3 @@ npm install --save express morgan cors body-parser
 
 # Init ESLint
 npx eslint --init
-
-# Install all dependencies locally
-npm install
